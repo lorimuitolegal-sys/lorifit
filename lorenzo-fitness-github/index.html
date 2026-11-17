@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#142c25">
+<meta name="description" content="Treinos e acompanhamento do Lorenzo Fitness">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Lorenzo">
+<title>Lorenzo Fitness</title>
+<style>
+:root{--green:#142c25;--green2:#236b45;--mint:#e1f1e7;--bg:#f3f7f4;--card:#fff;--muted:#66756b;--line:#dfe8e1}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#17231c;font:16px system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{background:var(--green);color:#fff;padding:22px 17px 20px;border-radius:0 0 23px 23px}
+.eyebrow{font-size:11px;letter-spacing:1.5px;color:#b9d7c5;font-weight:800}
+h1{font-size:27px;margin:5px 0}.sub{font-size:13px;color:#d5e7dc}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:17px}.stat{background:#ffffff14;border:1px solid #ffffff20;padding:10px;border-radius:12px}.stat b{display:block;font-size:20px}.stat span{font-size:11px;color:#d5e7dc}
+main{max-width:760px;margin:auto;padding:16px 13px 40px}.section{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--muted);margin:12px 2px}
+.days{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.day{border:1px solid var(--line);background:#fff;border-radius:13px;padding:13px 10px;text-align:left;color:#29382f;cursor:pointer}.day strong{display:block;font-size:14px}.day small{display:block;color:var(--muted);margin-top:3px}.day.active{background:var(--mint);border:2px solid #70a886;padding:12px 9px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:15px;margin-top:14px;box-shadow:0 3px 14px #1b352508}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.title{font-size:21px;font-weight:800}.muted{color:var(--muted);font-size:13px}.pill{background:#e4f3e9;color:#21613c;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap}
+.progress{height:8px;background:#e8eee9;border-radius:20px;overflow:hidden;margin:12px 0}.bar{height:100%;background:#27965b;width:0%;transition:width .2s}
+.exercise{border:1px solid var(--line);border-radius:13px;padding:13px;margin-top:9px}.exercise-top{display:flex;gap:10px;align-items:flex-start}.exercise-name{font-weight:750;flex:1}.prescription{font-size:13px;color:var(--muted);margin-top:4px}.exercise input{width:21px;height:21px;accent-color:#24734a}
+a{color:#216b45;font-size:13px;font-weight:700;text-decoration:none;display:inline-block;margin-top:9px}a:after{content:" ↗"}
+label{font-size:13px;color:var(--muted);display:block;margin:10px 0 5px}
+input[type=number],select,textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px;font:inherit;background:white;color:#17231c}textarea{min-height:75px;resize:vertical}
+button{border:0;border-radius:11px;background:var(--green2);color:white;padding:12px 15px;font:700 14px system-ui;cursor:pointer}.secondary{background:#edf3ef;color:#244c36;border:1px solid var(--line)}.full{width:100%;margin-top:12px}
+.note{font-size:12px;line-height:1.55;color:var(--muted);background:#f0f5f1;padding:12px;border-radius:12px;margin-top:12px}
+footer{text-align:center;color:var(--muted);font-size:11px;padding:15px}
+
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #70a886;outline-offset:2px}
+header{padding-top:max(22px,env(safe-area-inset-top))}
+.head-in{max-width:1040px;margin:auto}
+@media(min-width:600px){.days{grid-template-columns:repeat(4,1fr)}.stats{max-width:420px}}
+@media(min-width:900px){
+ header{padding:34px 28px 28px}h1{font-size:34px}.sub{font-size:15px}
+ main{max-width:1040px;padding:22px 28px 50px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:0 20px;align-items:start}
+ .sec-top,.days{grid-column:1/-1}
+ .p-treino{grid-column:1;grid-row:3/5}
+ .p-track{grid-column:2;grid-row:3}
+ .p-guia{grid-column:2;grid-row:4}
+ .panel{margin-top:16px;padding:20px}
+ .day:hover{background:#eef6f0}
+ .exercise{transition:background .15s}.exercise:hover{background:#f8fbf9}
+}
+@media(prefers-reduced-motion:reduce){.bar{transition:none}}
+@media(max-width:340px){.stats{gap:5px}.stat{padding:8px}}
+</style>
+</head>
+<body>
+<header><div class="head-in">
+ <div class="eyebrow">PROGRAMA DE TREINAMENTO</div>
+ <h1>🏋️ LORENZO FITNESS</h1>
+ <div class="sub">Meu treino. Minha evolução. Meu resultado.</div>
+ <div class="stats"><div class="stat"><b>17</b><span>anos</span></div><div class="stat"><b>4x</b><span>por semana</span></div><div class="stat"><b>8</b><span>semanas</span></div></div>
+</div></header>
+<main>
+ <div class="section sec-top">ESCOLHA O DIA DO TREINO</div>
+ <div class="days" id="days">
+  <button class="day active" data-day="seg"><strong>SEGUNDA</strong><small>Superior A</small></button>
+  <button class="day" data-day="ter"><strong>TERÇA</strong><small>Inferior A</small></button>
+  <button class="day" data-day="qui"><strong>QUINTA</strong><small>Superior B</small></button>
+  <button class="day" data-day="sab"><strong>SÁBADO</strong><small>Inferior B</small></button>
+ </div>
+ <section class="panel p-treino">
+  <div class="row"><div><div class="title" id="workoutTitle">Superior A</div><div class="muted" id="workoutFocus">Peito, costas, ombros e braços</div></div><span class="pill" id="count">0/6</span></div>
+  <div class="progress"><div class="bar" id="bar"></div></div>
+  <div id="exercises" aria-live="polite">
+   <article class="exercise"><div class="exercise-top"><div class="exercise-name">1. Supino com halteres no chão<div class="prescription">3 × 10–12</div></div><input type="checkbox" aria-label="Concluído"></div><a href="https://www.youtube.com/results?search_query=supino+halteres+no+chao+execucao" target="_blank" rel="noopener">Assistir demonstração no YouTube</a></article>
+   <article class="exercise"><div class="exercise-top"><div class="exercise-name">2. Remada unilateral<div class="prescription">3 × 10–12 por lado</div></div><input type="checkbox" aria-label="Concluído"></div><a href="https://www.youtube.com/results?search_query=remada+unilateral+halter+execucao" target="_blank" rel="noopener">Assistir demonstração no YouTube</a></article>
+   <article class="exercise"><div class="exercise-top"><div class="exercise-name">3. Desenvolvimento de ombros<div class="prescription">2 × 10–12</div></div><input type="checkbox" aria-label="Concluído"></div><a href="https://www.youtube.com/results?search_query=desenvolvimento+ombros+halteres" target="_blank" rel="noopener">Assistir demonstração no YouTube</a></article>
+   <article class="exercise"><div class="exercise-top"><div class="exercise-name">4. Elevação lateral<div class="prescription">2 × 12–15</div></div><input type="checkbox" aria-label="Concluído"></div><a href="https://www.youtube.com/results?search_query=elevacao+lateral+halteres" target="_blank" rel="noopener">Assistir demonstração no YouTube</a></article>
+   <article class="exercise"><div class="exercise-top"><div class="exercise-name">5. Rosca direta<div class="prescription">2 × 10–12</div></div><input type="checkbox" aria-label="Concluído"></div><a href="https://www.youtube.com/results?search_query=rosca+direta+halteres" target="_blank" rel="noopener">Assistir demonstração no YouTube</a></article>
+   <article class="exercise"><div class="exercise-top"><div class="exercise-name">6. Tríceps francês<div class="prescription">2 × 10–12</div></div><input type="checkbox" aria-label="Concluído"></div><a href="https://www.youtube.com/results?search_query=triceps+frances+halter" target="_blank" rel="noopener">Assistir demonstração no YouTube</a></article>
+  </div>
+  <button class="secondary full" id="reset">Limpar marcações deste treino</button>
+ </section>
+ <section class="panel p-track">
+  <div class="title">Meu acompanhamento</div>
+  <label for="week">Semana do programa</label><select id="week"></select>
+  <label for="weight">Carga de referência (kg)</label><input id="weight" type="number" min="0" step="0.5" placeholder="Ex.: 4">
+  <label for="bodyweight">Peso corporal (kg) – opcional</label><input id="bodyweight" type="number" min="0" step="0.1" placeholder="Ex.: 65">
+  <label for="notes">Observações / evolução</label><textarea id="notes" placeholder="Cargas, dificuldades e como se sentiu..."></textarea>
+  <button class="full" id="save">Salvar registro da semana</button><div id="saved" class="muted" style="margin-top:8px" aria-live="polite"></div>
+ </section>
+ <section class="panel p-guia">
+  <div class="title">Orientações</div>
+  <div class="note">• Aquecer por 5–10 minutos.<br>• Nas primeiras 2 semanas, priorizar técnica e cargas leves; usar 1–2 séries se necessário.<br>• Manter 2–3 repetições “na reserva”, sem buscar falha muscular.<br>• Descansar 60–120 segundos entre séries.<br>• Dormir de 8 a 10 horas e manter alimentação suficiente.<br>• Aos 17 anos, treinar com supervisão de profissional de Educação Física. Interromper se houver dor, tontura ou mal-estar.</div>
+  <div class="note"><b>Divisão:</b> Segunda – Superior A; Terça – Inferior A; Quinta – Superior B; Sábado – Inferior B. Quarta, sexta e domingo: recuperação ou atividade leve.</div>
+ </section>
+</main>
+<footer>Lorenzo Fitness · Marcações e registros salvos neste aparelho.</footer>
+<script>
+(function(){
+"use strict";
+const workouts={
+seg:{day:"SEGUNDA",name:"Superior A",focus:"Peito, costas, ombros e braços",ex:[
+["Supino com halteres no chão","3 × 10–12","https://www.youtube.com/results?search_query=supino+halteres+no+chao+execucao"],
+["Remada unilateral","3 × 10–12 por lado","https://www.youtube.com/results?search_query=remada+unilateral+halter+execucao"],
+["Desenvolvimento de ombros","2 × 10–12","https://www.youtube.com/results?search_query=desenvolvimento+ombros+halteres"],
+["Elevação lateral","2 × 12–15","https://www.youtube.com/results?search_query=elevacao+lateral+halteres"],
+["Rosca direta","2 × 10–12","https://www.youtube.com/results?search_query=rosca+direta+halteres"],
+["Tríceps francês","2 × 10–12","https://www.youtube.com/results?search_query=triceps+frances+halter"]]},
+ter:{day:"TERÇA",name:"Inferior A",focus:"Quadríceps, glúteos e abdômen",ex:[
+["Agachamento goblet","3 × 10–12","https://www.youtube.com/results?search_query=agachamento+goblet"],
+["Afundo estacionário","2 × 10 por perna","https://www.youtube.com/results?search_query=afundo+estacionario"],
+["Agachamento sumô","2 × 12","https://www.youtube.com/results?search_query=agachamento+sumo+halter"],
+["Elevação pélvica","3 × 12–15","https://www.youtube.com/results?search_query=elevacao+pelvica"],
+["Panturrilha em pé","3 × 15","https://www.youtube.com/results?search_query=panturrilha+em+pe+halter"],
+["Prancha abdominal","2 × 20–30 segundos","https://www.youtube.com/results?search_query=prancha+abdominal+execucao"]]},
+qui:{day:"QUINTA",name:"Superior B",focus:"Peito, costas, ombros e braços",ex:[
+["Flexão de braço","3 × 8–12","https://www.youtube.com/results?search_query=flexao+de+braco+execucao"],
+["Remada curvada","3 × 10–12","https://www.youtube.com/results?search_query=remada+curvada+halteres"],
+["Crucifixo no chão","2 × 12","https://www.youtube.com/results?search_query=crucifixo+halteres+chao"],
+["Elevação lateral","2 × 12–15","https://www.youtube.com/results?search_query=elevacao+lateral+halteres"],
+["Rosca martelo","2 × 10–12","https://www.youtube.com/results?search_query=rosca+martelo"],
+["Tríceps coice","2 × 12","https://www.youtube.com/results?search_query=triceps+coice"]]},
+sab:{day:"SÁBADO",name:"Inferior B",focus:"Posterior de coxa, glúteos e abdômen",ex:[
+["Terra romeno","3 × 10–12","https://www.youtube.com/results?search_query=terra+romeno+halteres"],
+["Agachamento livre","2 × 12","https://www.youtube.com/results?search_query=agachamento+livre+execucao"],
+["Afundo reverso","2 × 10 por perna","https://www.youtube.com/results?search_query=afundo+reverso+halteres"],
+["Elevação pélvica","3 × 12–15","https://www.youtube.com/results?search_query=elevacao+pelvica"],
+["Panturrilha em pé","3 × 15","https://www.youtube.com/results?search_query=panturrilha+halteres"],
+["Dead bug","2 × 10 por lado","https://www.youtube.com/results?search_query=dead+bug+exercicio"]]}
+};
+const $=id=>document.getElementById(id);
+const read=(key,def)=>{try{return JSON.parse(localStorage.getItem(key))||def}catch(e){return def}};
+let active="seg",completed=read("lf2-completed",{}),records=read("lf2-records",{});
+function render(){
+ document.querySelectorAll("[data-day]").forEach(b=>b.classList.toggle("active",b.dataset.day===active));
+ const w=workouts[active],done=completed[active]||[];
+ $("workoutTitle").textContent=w.name;$("workoutFocus").textContent=w.day+" · "+w.focus;
+ $("count").textContent=done.length+"/"+w.ex.length;$("bar").style.width=(done.length/w.ex.length*100)+"%";
+ $("exercises").innerHTML=w.ex.map((e,i)=>'<article class="exercise"><div class="exercise-top"><div class="exercise-name">'+(i+1)+'. '+e[0]+'<div class="prescription">'+e[1]+'</div></div><input type="checkbox" data-ex="'+i+'" aria-label="Marcar '+e[0]+' como concluído" '+(done.includes(i)?"checked":"")+'></div><a href="'+e[2]+'" target="_blank" rel="noopener">Assistir demonstração no YouTube</a></article>').join("");
+ document.querySelectorAll("[data-ex]").forEach(c=>c.addEventListener("change",()=>{let a=new Set(completed[active]||[]);c.checked?a.add(+c.dataset.ex):a.delete(+c.dataset.ex);completed[active]=Array.from(a);localStorage.setItem("lf2-completed",JSON.stringify(completed));render()}));
+}
+document.querySelectorAll("[data-day]").forEach(b=>b.addEventListener("click",()=>{active=b.dataset.day;render()}));
+for(let n=1;n<=8;n++){let o=document.createElement("option");o.value=n;o.textContent="Semana "+n;$("week").appendChild(o)}
+function loadRecord(){let r=records[$("week").value]||{};$("weight").value=r.weight||"";$("bodyweight").value=r.bodyweight||"";$("notes").value=r.notes||"";$("saved").textContent=r.saved?"Registro salvo neste aparelho.":""}
+$("week").addEventListener("change",loadRecord);
+$("save").addEventListener("click",()=>{records[$("week").value]={weight:$("weight").value,bodyweight:$("bodyweight").value,notes:$("notes").value,saved:true};localStorage.setItem("lf2-records",JSON.stringify(records));$("saved").textContent="Registro salvo neste aparelho."});
+$("reset").addEventListener("click",()=>{completed[active]=[];localStorage.setItem("lf2-completed",JSON.stringify(completed));render()});
+render();loadRecord();
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}))}
+})();
+</script>
+</body></html>
